@@ -1,0 +1,17 @@
+package ch02_sjh_03;
+
+public class CalAssembler {
+	MyCalculator calculator;
+	CalAdd calAdd;
+	CalSub calSub;
+	CalMul calMul;
+	CalDiv calDiv;
+	
+	public CalAssembler() {
+		calculator = new MyCalculator();
+		calAdd 	   = new CalAdd();
+		calSub     = new CalSub();
+		calMul     = new CalMul();
+		calDiv     = new CalDiv();
+	}
+}
