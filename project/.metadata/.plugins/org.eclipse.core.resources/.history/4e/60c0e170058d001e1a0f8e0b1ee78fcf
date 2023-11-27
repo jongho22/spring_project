@@ -1,0 +1,9 @@
+package ch02_sjh_01;
+
+public class MyCalculator {
+	
+	public void calAdd(int fNum, int sNum) {
+		ICalculator calculator = new CalAdd();
+	}
+	
+}
