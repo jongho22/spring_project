@@ -10,6 +10,7 @@ doctypeName=\#A7EC21 | null | false | false | false | false
 eclipse.preferences.version=1
 entityReference=\#DD2867 | null | false | false | false | false
 newFileTemplateName=xml declaration
+org.eclipse.wst.xml.ui.internal.tabletree.XMLMultiPageEditorPart.lastActivePage=1
 overriddenByCSS=,cdataBorder,cdataText,commentBorder,commentText,declBorder,doctypeExternalId,doctypeExternalPubref,doctypeExtrenalSysref,doctypeName,entityReference,piBorder,piContent,tagAttributeEquals,tagAttributeName,tagAttributeValue,tagBorder,tagName,xmlContent,
 piBorder=\#0394be | null | false | false | false | false
 piContent=\#D9E8F7 | null | false | false | false | false
