@@ -1,0 +1,7 @@
+package ch04_sjh_01.ems.member.dao;
+
+// DAO : database access object
+
+public class StudentDao {
+
+}

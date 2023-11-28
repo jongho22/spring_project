@@ -1,0 +1,13 @@
+package ch04_sjh_01.ems.member.service;
+
+import ch04_sjh_01.ems.member.dao.StudentDao;
+
+public class StudentDeleteService {
+	
+	private StudentDao studenDao;
+	
+	public StudentDeleteService(StudentDao studentDao) {
+		this.studenDao = studentDao;
+	}
+
+}

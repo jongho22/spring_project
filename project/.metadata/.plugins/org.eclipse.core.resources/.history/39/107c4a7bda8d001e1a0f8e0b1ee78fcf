@@ -1,0 +1,11 @@
+package ch04_sjh_01.ems.member;
+
+public class DBConnectionInfo {
+	
+	private String url;
+	private String userId;
+	private String userPw;
+	
+	
+
+}

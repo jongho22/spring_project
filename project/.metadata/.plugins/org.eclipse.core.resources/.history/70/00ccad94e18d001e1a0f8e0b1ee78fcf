@@ -1,0 +1,12 @@
+package ch04_sjh_01.ems.member.service;
+
+
+public class PrintStudentInfomationService {
+	
+	StudentAllSelectService allSelectService;
+	
+	public PrintStudentInfomationService(StudentAllSelectService allSelectService) {
+		
+	}
+	
+}

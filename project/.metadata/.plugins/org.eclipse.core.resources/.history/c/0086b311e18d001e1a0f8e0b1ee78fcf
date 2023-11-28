@@ -1,0 +1,21 @@
+package ch04_sjh_01.ems.member.service;
+
+import ch04_sjh_01.ems.member.Student;
+import ch04_sjh_01.ems.member.dao.StudentDao;
+
+public class StudentDeleteService {
+	
+	private StudentDao studentDao;
+	
+	public StudentDeleteService(StudentDao studentDao) {
+		this.studentDao = studentDao;
+	}
+	
+	public
+	
+	public boolean verify(String sNum) {
+		Student student = studentDao.select(sNum);
+		return student != null ? true : false;
+	}
+	
+}

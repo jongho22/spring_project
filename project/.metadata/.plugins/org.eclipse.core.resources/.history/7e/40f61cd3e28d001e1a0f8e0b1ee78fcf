@@ -1,0 +1,31 @@
+package ch04_sjh_01.ems.member.service;
+
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Set;
+
+import ch04_sjh_01.ems.member.Student;
+
+public class PrintStudentInfomationService {
+	
+	StudentAllSelectService allSelectService;
+	
+	public PrintStudentInfomationService(StudentAllSelectService allSelectService) {
+		this.allSelectService = allSelectService;
+	}
+	
+	public void printStudentsInfo() {
+		Map<String, Student> allStudent = allSelectService.allSelect();
+		Set<String> keys = allStudent.keySet();
+		Iterator<String> iterator = keys.iterator();
+		System.out.println("학생 목록 시작 --------");
+		
+		while (iterator.hasNext()) {
+			String key = iterator.next();
+			Student student = allStudent.get(key);
+			System.out.print("sNum:" + student.getsNum() + "\t");
+		}
+		
+	}
+	
+}
