@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans>
+	<bean id="initSampleData" class="ch04_sjh_01.ems.utils.InitSampleData">
+		
+		<!--sNums 필드 초기화 -->
+		<property name="sNums">
+			<array>
+				<value>hbs001</value>
+				<value>hbs002</value>
+				<value>hbs003</value>
+				<value>hbs004</value>
+				<value>hbs005</value>
+			</array>
+		</property>
+		
+		<!-- sId 필드 초기화 -->
+		<property name="sIds">
+			<array>
+				<value>rabbit</value>
+				<value>hippo</value>
+				<value>raccoon</value>
+				<value>elephant</value>
+				<value>lion</value>
+			</array>
+		</property>
+		
+		<!-- sPws 필드 초기화 -->
+		<property name="sPws">
+			<array>
+				<value>p0001</value>
+				<value>p0002</value>
+				<value>p0003</value>
+				<value>p0004</value>
+				<value>p0005</value>
+			</array>
+		</property>
+		
+		<!-- sNames 필드 초기화 -->
+		<property name="sNames">
+			<array>
+				<value>agatha</value>
+				<value>barbara</value>
+				<value>chris</value>
+				<value>doris</value>
+				<value>elva</value>
+			</array>
+		</property>
+		
+		<!-- sAges 필드 초기화 -->
+		<property name="sAges">
+			<array>
+				<value>19</value>
+				<value>20</value>
+				<value>21</value>
+				<value>22</value>
+				<value>23</value>
+			</array>
+		</property>
+		
+		<!-- sGenders 필드 초기화 -->
+		<property name="sGenders">
+			<array>
+				<value>M</value>
+				<value>W</value>
+				<value>W</value>
+				<value>M</value>
+				<value>M</value>
+			</array>
+		</property>
+		
+		<!-- sMajons 필드 초기화  -->
+		<property name="sMajors">
+			<array>
+				<value>English</value>
+				<value>Korean</value>
+				<value>French</value>
+				<value>Philosophy</value>
+				<value>History</value>
+			</array>
+		</property>
+		
+	</bean>
+	
+	<!-- StudentDao 빈 생성 -->
+	<bean id="studentDao" class="ch04_sjh_01.ems.member.dao.StudentDao" />
+
+	<!-- StudentRigisterService 빈 생성 -->
+	<bean id="studentRegisterService" class="ch04_sjh_01.ems.member.service.StudentRegisterService">
+		<constructor-arg ref="studentDao"/>
+	</bean>
+	
+	<!-- StudentModifyService 빈 생성 -->
+	<bean id="studentModifyService" class="ch04_sjh_01.ems.member.service.StudentModifyService">
+		<constructor-arg ref="studentDao"/>
+	</bean>
+	
+	<!-- StudentDeleteService 빈 생성 -->
+	<bean id="studentDeleteService" class="ch04_sjh_01.ems.member.service.StudentDeleteService">
+		<constructor-arg ref="studentDao"/>
+	</bean>
+	
+	<!-- StudentSelectService 빈 생성 -->
+	<bean id="studentSelectService" class="ch04_sjh_01.ems.member.service.StudentSelectService">
+		<constructor-arg ref="studentDao"/>
+	</bean>
+	
+</beans>

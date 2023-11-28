@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean id="initSampleData" class="ch04_sjh_01.ems.utils.InitSampleData">
+	
+	<!--sNums 필드 초기화 -->
+	<property name="sNums">
+		<array>
+			<value>hbs001</value>
+			<value>hbs002</value>
+			<value>hbs003</value>
+			<value>hbs004</value>
+			<value>hbs005</value>
+		</array>
+	</property>
+	
+	<!-- sId 필드 초기화 -->
+	<property>
+		<array>
+			<value>rabbit</value>
+			<value>hippo</value>
+			<value>raccoon</value>
+			<value>elephant</value>
+			<value>lion</value>
+		</array>
+	</property>
+	
+	<!-- sPws 필드 초기화 -->
+	<property>
+		<array>
+			<value>p0001</value>
+			<value>p0002</value>
+			<value>p0003</value>
+			<value>p0004</value>
+			<value>p0005</value>
+		</array>
+	</property>
+</bean>

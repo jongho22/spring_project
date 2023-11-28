@@ -1,0 +1,35 @@
+package ch04_sjh_01.ems.utils;
+
+public class InitSampleData {
+	
+	private String[] sNums = {"hbs001", "hbs002", "hbs003", "hbs004", "hbs005"};
+	private String[] sIds = {"rabitt", "hippo", "raccon", "elephant", "lion"};
+	private String[] sPws = {"12345", "54321", "12323", "83622", "92735"};
+	private String[] sNames = {"agatha", "barbara", "chris", "doris", "elva"};
+	private int[] sAges = {19, 22, 20, 27, 19};
+	private char[] sGenders = {'M', 'W', 'M', 'W', 'W'};
+	private String[] sMajors = {"English Literature", "Korea Language and Literature",
+			"French and Literature", "Philosophy", "History", };
+	
+	public String[] getsNums() {return sNums;}
+	public void setsNums(String[] sNums) {this.sNums = sNums;}
+	
+	public String[] getsIds() {return sIds;}
+	public void setsIds(String[] sIds) {this.sIds = sIds;}
+	
+	public String[] getsPws() {return sPws;}
+	public void setsPws(String[] sPws) {this.sPws = sPws;}
+	
+	public String[] getsNames() {return sNames;}
+	public void setsNames(String[] sNames) {this.sNames = sNames;}
+	
+	public int[] getsAges() {return sAges;}
+	public void setsAges(int[] sAges) {this.sAges = sAges;}
+	
+	public char[] getsGenders() {return sGenders;}
+	public void setsGenders(char[] sGenders) {this.sGenders = sGenders;}
+	
+	
+	
+}
+
