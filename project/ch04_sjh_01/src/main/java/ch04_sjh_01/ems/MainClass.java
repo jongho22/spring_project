@@ -13,9 +13,12 @@ import ch04_sjh_01.ems.utils.InitSampleData;
 
 public class MainClass {
 	public static void main(String[] args) {
+		
+		String[] appCtxs = {"classpath:appCtx1.xml", "classpath:appCtx2.xml", "classpath:appCtx3.xml"};
+		
 		// IoC 컨테이너 생성
 		GenericXmlApplicationContext ctx = 
-				new GenericXmlApplicationContext("classpath:applicationContext.xml");
+				new GenericXmlApplicationContext("classpath:appCtxImport.xml");
 		
 		InitSampleData initSampleData = ctx.getBean("initSampleData", InitSampleData.class);
 		

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- EMSInformationService 빈 -->
+	<bean id="eMSInformationService"
+		class="ch04_sjh_01.ems.member.service.EMSInformationService">
+		<property name="info"
+			value="Education Management System program was developed in 2022." />
+		<property name="copyRight"
+			value="COPYRIGHT(C) 2022 EMS CO., LTD. ALL RIGHT RESERVED. CONTACT MASTER FOR MORE INFORMATION." />
+		<property name="ver" value="The version is 1.0" />
+		<property name="sYear" value="2022" />
+		<property name="sMonth" value="3" />
+		<property name="sDay" value="1" />
+		<property name="eYear" value="2022" />
+		<property name="eMonth" value="4" />
+		<property name="eDay" value="30" />
+		<property name="developers">
+			<list>
+				<value>Cheney.</value>
+				<value>Eloy.</value>
+				<value>Jasper.</value>
+				<value>Dillon.</value>
+				<value>Kian.</value>
+			</list>
+		</property>
+
+		<!-- administrators 필드 초기화 -->
+		<property name="administrators">
+			<map>
+				<entry>
+					<key>
+						<value>Cheney</value>
+					</key>
+					<value>cheney@springsjh.org</value>
+				</entry>
+				<entry>
+					<key>
+						<value>Jasper</value>
+					</key>
+					<value>jasper@springsjh.org</value>
+				</entry>
+			</map>
+		</property>
+
+		<!-- dbInfos 필드 초기화 -->
+		<property name="dbInfos">
+			<map>
+				<entry>
+					<key>
+						<value>dev</value>
+					</key>
+					<ref bean="dev_DBConnectionInfoDev" />	 <!-- 개발용 데이터베이스 지정 -->
+				</entry>
+				<entry>
+					<key>
+						<value>real</value>
+					</key>
+					<ref bean="real_DBConnectionInfo" />	<!-- 실제 서비스 데이터베이스 지정 -->
+				</entry>
+			</map>
+		</property>
+	</bean>
+
+</beans> 
