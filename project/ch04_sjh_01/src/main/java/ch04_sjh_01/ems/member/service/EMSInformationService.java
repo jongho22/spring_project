@@ -44,7 +44,7 @@ public class EMSInformationService {
 			System.out.print("[" + key + " DB]");
 			System.out.print("url: " + info.getUrl() + "\t");
 			System.out.print("userId: " + info.getUserId() + "\t");
-			System.out.print("userPw: " + info.getUserPw() + "\t");
+			System.out.println("userPw: " + info.getUserPw());
 		}
 	}
 	

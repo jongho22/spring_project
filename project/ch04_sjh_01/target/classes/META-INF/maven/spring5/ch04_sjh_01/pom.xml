@@ -3,4 +3,11 @@
   <groupId>spring5</groupId>
   <artifactId>ch04_sjh_01</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <dependencies>
+  	<dependency>
+  		<groupId>spring5</groupId>
+  		<artifactId>ch03_sjh_01</artifactId>
+  		<version>0.0.1-SNAPSHOT</version>
+  	</dependency>
+  </dependencies>
 </project>
