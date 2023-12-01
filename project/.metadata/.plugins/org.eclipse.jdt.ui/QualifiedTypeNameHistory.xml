@@ -1,2 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="java.lang.System"/>
+    <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="ch04_sjh_01.ems.member.dao.StudentDao"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="java.util.Map"/>
+    <fullyQualifiedTypeName name="ch04_sjh_01.ems.member.DBConnectionInfo"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
+    <fullyQualifiedTypeName name="java.util.Iterator"/>
+    <fullyQualifiedTypeName name="ch04_sjh_01.ems.utils.InitSampleData"/>
+    <fullyQualifiedTypeName name="ch04_sjh_01.ems.member.service.StudentRegisterService"/>
+    <fullyQualifiedTypeName name="ch04_sjh_01.ems.member.Student"/>
+    <fullyQualifiedTypeName name="ch04_sjh_01.ems.member.service.PrintStudentInformationService"/>
+    <fullyQualifiedTypeName name="ch04_sjh_01.ems.member.service.StudentSelectService"/>
+    <fullyQualifiedTypeName name="ch04_sjh_01.ems.member.service.StudentModifyService"/>
+    <fullyQualifiedTypeName name="ch04_sjh_01.ems.member.service.StudentDeleteService"/>
+    <fullyQualifiedTypeName name="org.springframework.context.support.GenericXmlApplicationContext"/>
+</qualifiedTypeNameHistroy>
