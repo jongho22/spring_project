@@ -1,7 +1,7 @@
-package contact.service;
+package ch05_sjh_01.contact.service;
 
 import ch05_sjh_01.contact.ContactSet;
-import contact.dao.ContactDao;
+import ch05_sjh_01.contact.dao.ContactDao;
 
 public class ContactRegisterService {
 	
@@ -9,6 +9,7 @@ public class ContactRegisterService {
 	private ContactDao contactDao;
 	
 	public ContactRegisterService(ContactDao contactDao) {
+		System.out.println("확인 : " + contactDao);
 		this.contactDao = contactDao;
 	}
 	

@@ -1,4 +1,4 @@
-package contact.utils;
+package ch05_sjh_01.contact.utils;
 
 public class InitSampleData {
 	

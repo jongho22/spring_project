@@ -1,4 +1,4 @@
-package contact.dao;
+package ch05_sjh_01.contact.dao;
 
 import java.util.HashMap;
 import java.util.Map;

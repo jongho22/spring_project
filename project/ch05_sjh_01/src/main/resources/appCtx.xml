@@ -1,1 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"  
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+ 						http://www.springframework.org/schema/beans/spring-beans.xsd
+ 						http://www.springframework.org/schema/context
+ 						http://www.springframework.org/schema/context/spring-context.xsd">
+    
+    <context:annotation-config/>
+    
+    <bean id="initSampleData" class="ch05_sjh_01.contact.utils.InitSampleData">
+    	<property name="names">
+    		<array>
+    			<value>류현진</value>
+    			<value>손흥민</value>
+    			<value>김연경</value>
+    		</array>
+    	</property>
+    	
+    	<property name="phoneNumbers">
+    		<array>
+    			<value>010-0000-1111</value>
+    			<value>010-0000-2222</value>
+    			<value>010-0000-3333</value>
+    		</array>
+    	</property>
+    </bean>
+    
+    <bean id="contactDao" class="ch05_sjh_01.contact.dao.ContactDao"/>
+    
+    <bean id="registerService" class="ch05_sjh_01.contact.service.ContactRegisterService"/>
+    <!-- 자동 주입  -->
+    
+    <bean id="searchService" class="ch05_sjh_01.contact.service.ContactSearchService"/>
+    <!-- 자동 주입  -->
+    
+</beans>

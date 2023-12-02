@@ -1,17 +1,18 @@
-package contact.service;
+package ch05_sjh_01.contact.service;
 
 import ch05_sjh_01.contact.ContactSet;
-import contact.dao.ContactDao;
+import ch05_sjh_01.contact.dao.ContactDao;
 
-public class ContactSerchService {
+public class ContactSearchService {
 	
 	private ContactDao contactDao;
 	
-	public ContactSerchService(ContactDao contactDao) {
+	public ContactSearchService(ContactDao contactDao) {
+		System.out.println("확인 : " + contactDao);
 		this.contactDao = contactDao;
 	}
 	
-	public ContactSet serchContact(String name) {
+	public ContactSet searchContact(String name) {
 		if (verify(name)) {
 			return contactDao.select(name);
 		} else {
