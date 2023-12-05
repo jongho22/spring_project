@@ -4,9 +4,10 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:context="http://www.springframework.org/schema/context"  
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
- 						http://www.springframework.org/schema/beans/spring-beans.xsd
- 						http://www.springframework.org/schema/context
- 						http://www.springframework.org/schema/context/spring-context.xsd">
+                    	http://www.springframework.org/schema/beans/spring-beans.xsd
+                    	http://www.springframework.org/schema/context
+                    	http://www.springframework.org/schema/context/spring-context.xsd">
+
     
     <context:annotation-config/>
     
@@ -28,7 +29,9 @@
     	</property>
     </bean>
     
-    <bean id="contactDao" class="ch05_sjh_01.contact.dao.ContactDao"/>
+    <bean id="contactDao1" class="ch05_sjh_01.contact.dao.ContactDao" />
+	<bean id="contactDao2" class="ch05_sjh_01.contact.dao.ContactDao" />
+	<bean id="contactDao3" class="ch05_sjh_01.contact.dao.ContactDao" />
     
     <bean id="registerService" class="ch05_sjh_01.contact.service.ContactRegisterService"/>
     <!-- 자동 주입  -->
