@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <dirs>
+    <entry loc="/Library/Java/JavaVirtualMachines/zulu-11-arm.jdk/Contents/Home" stamp="1696503730000"/>
     <entry loc="/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.aarch64_17.0.8.v20230831-1047/jre" stamp="1694096902000"/>
+    <entry loc="/Library/Java/JavaVirtualMachines/zulu-11.jdk/Contents/Home" stamp="1696503730000"/>
     <entry loc="/Applications/Eclipse.app/Contents/Eclipse/plugins/org.eclipse.justj.openjdk.hotspot.jre.full.macosx.aarch64_17.0.8.v20230831-1047" stamp="1694096902000"/>
-    <entry loc="/opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home" stamp="1696570413000"/>
+    <entry loc="/opt/homebrew/Cellar/openjdk@11/11.0.21/libexec/openjdk.jdk/Contents/Home" stamp="1701856433503"/>
 </dirs>
