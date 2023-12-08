@@ -3031,3 +3031,4 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact spring5:ch03_
 2023-12-06 20:41:46,045 [Worker-17: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 0 resource from src/test/resources to target/test-classes
 2023-12-06 21:20:57,364 [Worker-6: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
 2023-12-06 21:20:58,282 [Worker-1: Building] INFO  o.e.m.c.i.p.WorkspaceClassifierResolverManager - Resolving P/ch03_sjh_02: spring5:ch03_sjh_01:0.0.1-SNAPSHOT with classifier  to /ch03_sjh_02/target/classes
+2023-12-08 13:48:54,398 [Worker-1: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.

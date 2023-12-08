@@ -35,7 +35,22 @@ public class MemberController {
 		
 		memberService.signUpConfirm(memberVo);
 		
-		return null;
+		return "sign_up_ok";
 	}
+	
+	@RequestMapping("/signInConfirm")
+	public String signInConfirm(MemberVo memberVo) {
+		System.out.println("[MemberService] signInConfirm()");
+		
+		MemberVo signInedMember = memberService.signInConfirm(memberVo);
+		
+		if (signInedMember != null)
+			return "sign_in_ok";
+		else
+			return "sign_in_ng";
+		
+//		return null;
+	}
+
 
 }
