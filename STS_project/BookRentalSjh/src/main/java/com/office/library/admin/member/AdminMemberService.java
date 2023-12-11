@@ -29,4 +29,17 @@ public class AdminMemberService {
 			return ADMIN_ACCOUNT_ALREADY_EXIST;
 		}
 	}
+	
+	public AdminMemberVo loginConfirm(AdminMemberVo adminMemberVo) {
+		System.out.println("[AdminMemberService] loginConfirm()");
+		
+		AdminMemberVo loginedAdminMemberVo = adminMemberDao.selectAdmin(adminMemberVo);
+		
+		if (loginedAdminMemberVo != null)
+			System.out.println("[AdminMemberService] ADMIN MEMBER LOGIN SUCCESS!!");
+		else
+			System.out.println("[AdminMemberService] ADMIN MEMBER LOGIN FAIL!!");
+		
+		return loginedAdminMemberVo;
+	}
 }

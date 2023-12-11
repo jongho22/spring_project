@@ -13,7 +13,7 @@ public class AdminMemberController {
 	@Autowired
 	AdminMemberService adminMemberService;
 	
-	// 어드민 회원가입 화면 이동 - GET
+	// 어드민 회원가입 폼 화면 - GET
 	// @RequestMapping(value = {"/createAccountForm"}, method = RequestMethod.GET)
 	@GetMapping("/createAccountForm")
 	public String createAccountForm() {
@@ -36,6 +36,32 @@ public class AdminMemberController {
 		
 		if (result <= 0)
 			nextPage = "admin/member/create_account_ng";
+		
+		return nextPage;
+	}
+	
+	// 로그인 폼 화면  - GET
+	@GetMapping("/loginForm")
+	public String loginForm() {
+		System.out.println("[AdminMemberController] loginForm()");
+		
+		String nextPage = "admin/member/login_form";
+		
+		return nextPage;
+	}
+	
+	// 로그인 확인 - POST
+	@PostMapping("/loginConfirm")
+	public String loginConfirm(AdminMemberVo amdinMemberVo) {
+		System.out.println("[AdminMemberController] loginConfirm()");
+		
+		String nextPage = "admin/member/login_ok";
+		
+		AdminMemberVo loginedAdminMemberVo = adminMemberService.loginConfirm(amdinMemberVo);
+		
+		if (loginedAdminMemberVo == null) {
+			nextPage = "admin/member/login_ng";
+		}
 		
 		return nextPage;
 	}
