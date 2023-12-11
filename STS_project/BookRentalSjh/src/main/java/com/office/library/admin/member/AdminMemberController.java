@@ -15,7 +15,7 @@ public class AdminMemberController {
 	
 	// 어드민 회원가입 화면 이동 - GET
 	// @RequestMapping(value = {"/createAccountForm"}, method = RequestMethod.GET)
-	@GetMapping("/createAcoountForm")
+	@GetMapping("/createAccountForm")
 	public String createAccountForm() {
 		System.out.println("[AdminMemberController] createAccountForm()");
 		
@@ -26,7 +26,7 @@ public class AdminMemberController {
 	
 	// 회원가입 확인 - POST
     // @RequestMapping(value = {"/createAccountConfirm"}, method = RequestMethod.POST)
-	@PostMapping("/createAcoountForm")
+	@PostMapping("/createAccountConfirm")
 	public String createAccountConfirm(AdminMemberVo adminMemberVo) {
 		System.out.println("[AdminMemberController] createAccountCofirm()");
 		
