@@ -56,4 +56,23 @@ public class AdminMemberService {
 		
 		int result = adminMemberDao.updateAdminAccount(a_m_no);
 	}
+	
+	public int modifyAccountConfirm(AdminMemberVo adminMemberVo) {
+		System.out.println("[AdminMemberService] modifyAccountConfirm()");
+		
+		return adminMemberDao.updateAdminAccount(adminMemberVo);
+	}
+	
+	public AdminMemberVo getLoginedAdminMemberVo(int a_m_no) {
+		System.out.println("[AdminMemberService] getLoginedAdminMemberVo()");
+		
+		AdminMemberVo loginedAdminMemberVo = adminMemberDao.selectAdmin(a_m_no);
+		
+		if (loginedAdminMemberVo != null)
+			System.out.println("[AdminMemberService] ADMIN MEMBER UPDATE SUCCESS!!");
+		else
+			System.out.println("[AdminMemberService] ADMIN MEMBER UPDATE FAIL!!");
+		
+		return loginedAdminMemberVo;
+	}
 }

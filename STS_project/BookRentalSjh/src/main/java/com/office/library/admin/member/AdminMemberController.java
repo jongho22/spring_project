@@ -116,4 +116,39 @@ public class AdminMemberController {
 		
 		return nextPage;
 	}
+	
+	// 회원 정보 수정 
+	@GetMapping("/modifyAccountForm")
+	public String modifyAccount(HttpSession session) {
+		System.out.println("[AdminMemberController] modifyAccountForm()");
+		
+		String nextPage = "admin/member/modify_account_form";
+		
+		AdminMemberVo loginedAdminMemberVo = (AdminMemberVo) session.getAttribute("loginedAdminMemberVo");
+		
+		if (loginedAdminMemberVo == null) nextPage = "redirect:/admin/member/loginForm";
+		
+		return nextPage;
+	}
+	
+	// 회원 정보 수정 확인 
+	@PostMapping("/modifyAccountConfirm")
+	public String modifyAccountConfirm(AdminMemberVo adminMemberVo, HttpSession session) {
+		System.out.println("[AdminMemberController] modifyAccountConfirm()");
+		
+		String nextPage = "admin/member/modify_account_ok";
+		
+		int result = adminMemberService.modifyAccountConfirm(adminMemberVo);
+		
+		if (result>0) {
+			AdminMemberVo loginedAdminMemberVo = adminMemberService.getLoginedAdminMemberVo(adminMemberVo.getA_m_no());
+			
+			session.setAttribute("loginedAdminMemberVo", loginedAdminMemberVo);
+			session.setMaxInactiveInterval(60 * 30);
+		} else {
+			nextPage = "admin/member/modfiy_account_ng";
+		}
+		
+		return nextPage;
+	}
 }
