@@ -1,5 +1,7 @@
 package com.office.library.book.admin;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -28,5 +30,17 @@ public class BookService {
 		} else {
 			return BOOK_ISBN_ALREADY_EXIST;
 		}
+	}
+	
+	public List<BookVo> searchBookConfirm(BookVo bookVo) {
+		System.out.println("[BookService] searchBookConfirm()");
+		
+		return bookDao.selectBooksBySearch(bookVo);
+	}
+	
+	public BookVo bookDetail(int b_no) {
+		System.out.println("[BookService] bookDetail()");
+		
+		return bookDao.selectBook(b_no);
 	}
 }

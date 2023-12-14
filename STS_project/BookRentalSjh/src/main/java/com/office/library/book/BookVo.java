@@ -12,7 +12,7 @@ public class BookVo {
 	String b_call_number;
 	int b_rantal_able;
 	String b_reg_date;
-	String b_mod_data;
+	String b_mod_date;
 	
 	public int getB_no() {
 		return b_no;
@@ -74,10 +74,10 @@ public class BookVo {
 	public void setB_reg_date(String b_reg_date) {
 		this.b_reg_date = b_reg_date;
 	}
-	public String getB_mod_data() {
-		return b_mod_data;
+	public String getB_mod_date() {
+		return b_mod_date;
 	}
-	public void setB_mod_data(String b_mod_data) {
-		this.b_mod_data = b_mod_data;
+	public void setB_mod_date(String b_mod_data) {
+		this.b_mod_date = b_mod_data;
 	}
 }
