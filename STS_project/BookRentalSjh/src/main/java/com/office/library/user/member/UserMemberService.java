@@ -30,4 +30,27 @@ public class UserMemberService {
 			return USER_ACCOUNT_ALREADY_EXIST;
 		}
 	}
+	
+	public UserMemberVo loginConfirm(UserMemberVo userMemberVo) {
+		System.out.println("[UserMemberService] loginConfirm()");
+		
+		UserMemberVo loginedUserMemberVo = userMemberDao.selectUser(userMemberVo);
+		
+		if (loginedUserMemberVo != null) System.out.println("[UserMembeervice] USER MEMBER LOGIN SUCCESS!!");
+		else System.out.println("[UserMembeervice] USER MEMBER LOGIN FAIL!!");
+		
+		return loginedUserMemberVo;
+	}
+	
+	public int modifyAccountConfirm(UserMemberVo userMemberVo) {
+		System.out.println("[UserMemberService] modifyAccountConfirm()");
+		
+		return userMemberDao.updateUserAccount(userMemberVo);
+	}
+	
+	public UserMemberVo getLoginedUserMemberVo(int u_m_no) {
+		System.out.println("[UserMemberService] getLoginedUserMember()");
+		
+		return userMemberDao.selectUser(u_m_no);
+	}
 }
