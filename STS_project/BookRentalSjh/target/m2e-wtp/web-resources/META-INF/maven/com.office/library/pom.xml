@@ -163,6 +163,15 @@
 		    <version>1.5</version>
 		</dependency>
 		
+		<!-- Lombok -->
+		<!-- https://mvnrepository.com/artifact/org.projectlombok/lombok -->
+		<dependency>
+		    <groupId>org.projectlombok</groupId>
+		    <artifactId>lombok</artifactId>
+		    <version>1.18.30</version>
+		    <scope>provided</scope>
+		</dependency>
+		
 	</dependencies>
     <build>
         <plugins>
