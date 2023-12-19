@@ -10,7 +10,7 @@ public class HomeController {
 	public String home() {
 		System.out.println("[HomeController] home()");
 		
-		return "redirect:/user/member/";
+		return "redirect:/user/";
 		
 	}
 }
