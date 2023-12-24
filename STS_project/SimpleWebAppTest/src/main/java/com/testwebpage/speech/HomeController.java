@@ -45,13 +45,8 @@ public class HomeController {
     }
 	
 	@PostMapping("/upload")
-	public String fileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) {
-        try {
-			fileService.makeFlacFile(file);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+	public String fileUpload(@RequestParam("file") MultipartFile file, RedirectAttributes redirectAttributes) throws IOException {
+        fileService.convertVideoToAudio(file);
 
         redirectAttributes.addFlashAttribute("message",
                 "You successfully uploaded " + file.getOriginalFilename() + "!");
