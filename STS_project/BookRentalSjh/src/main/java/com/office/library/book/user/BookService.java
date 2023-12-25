@@ -41,4 +41,10 @@ public class BookService {
 		
 		return bookDao.selectRentalBooks(u_m_no);
 	}
+	
+	public List<RentalBookVo> listupRentalBookHistory(int u_m_no) {
+		System.out.println("[BookService] listupRentalBookHistory()");
+		
+		return bookDao.selectRentalBookHistory(u_m_no);
+	}
 }

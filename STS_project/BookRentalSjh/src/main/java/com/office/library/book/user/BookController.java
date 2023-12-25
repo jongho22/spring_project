@@ -85,4 +85,20 @@ public class BookController {
 		
 		return nextPage;
 	}
+	
+	// 도서 대출 이력
+	@GetMapping("/listupRentalBookHistory")
+	public String listupRentalBookHistory(HttpSession session, Model model) {
+		System.out.println("[BookController] listupRentalBookHistory()");
+			
+		String nextPage = "user/book/rental_book_history";
+		
+		UserMemberVo loginedUserMemberVo = (UserMemberVo) session.getAttribute("loginedUserMemberVo");
+		
+		List<RentalBookVo> rentalBookVos = bookService.listupRentalBookHistory(loginedUserMemberVo.getU_m_no());
+		
+		model.addAttribute("rentalBookVos",rentalBookVos);
+		
+		return nextPage;
+	}
 }
