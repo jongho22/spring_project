@@ -277,4 +277,42 @@ public class BookDao {
 		
 		return result;
 	}	
+	
+	public List<HopeBookVo> selectRequestHopeBooks(int u_m_no) {
+		System.out.println("[BookDao] insertHopeBook()");
+		
+		String sql = "SELECT * FROM tbl_hope_book WHERE u_m_no = ?";
+		
+		List<HopeBookVo> hopeBookVos = null;
+		
+		try {
+			hopeBookVos = jdbcTemplate.query(sql, new RowMapper<HopeBookVo>() {
+				
+				@Override
+				public HopeBookVo mapRow(ResultSet rs, int rowNum) throws SQLException {
+									
+				HopeBookVo hopeBookVo = new HopeBookVo();
+									
+				hopeBookVo.setHb_no(rs.getInt("hb_no"));
+				hopeBookVo.setU_m_no(rs.getInt("u_m_no"));
+				hopeBookVo.setHb_name(rs.getString("hb_name"));
+				hopeBookVo.setHb_author(rs.getString("hb_author"));
+				hopeBookVo.setHb_publisher(rs.getString("hb_publisher"));
+				hopeBookVo.setHb_publish_year(rs.getString("hb_publish_year"));
+				hopeBookVo.setHb_reg_date(rs.getString("hb_reg_date"));
+				hopeBookVo.setHb_mod_date(rs.getString("hb_mod_date"));
+				hopeBookVo.setHb_result(rs.getInt("hb_result"));
+				hopeBookVo.setHb_result_last_date(rs.getString("hb_result_last_date"));
+									
+				return hopeBookVo;
+									
+				}
+								
+			}, u_m_no);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return hopeBookVos;
+	}
 }
