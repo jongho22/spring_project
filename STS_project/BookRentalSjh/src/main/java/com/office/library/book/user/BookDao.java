@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
 import com.office.library.book.BookVo;
+import com.office.library.book.HopeBookVo;
 import com.office.library.book.RentalBookVo;
 
 @Component
@@ -247,10 +248,33 @@ public class BookDao {
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		}
+		return rentalBookVos;	
+	}
+	
+	public int insertHopeBook(HopeBookVo hopeBookVo) {
+		System.out.println("[BookDao] insertHopeBook()");
+		
+		String sql =  "INSERT INTO tbl_hope_book(u_m_no, hb_name, hb_author, hb_publisher, "
+					+ "hb_publish_year, hb_reg_date, hb_mod_date, hb_result_last_date) "
+					+ "VALUES(?, ?, ?, ?, ?, NOW(), NOW(), NOW())";
+		
+		int result = -1;
+		
+		try {
+			
+			result = jdbcTemplate.update(sql, 
+											hopeBookVo.getU_m_no(), 
+											hopeBookVo.getHb_name(), 
+											hopeBookVo.getHb_author(), 
+											hopeBookVo.getHb_publisher(), 
+											hopeBookVo.getHb_publish_year());
+			
+		} catch (Exception e) {
+			e.printStackTrace();
 			
 		}
 		
-		return rentalBookVos;
-		
-	}
+		return result;
+	}	
 }

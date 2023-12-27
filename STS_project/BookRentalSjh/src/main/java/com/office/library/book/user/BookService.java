@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.office.library.book.BookVo;
+import com.office.library.book.HopeBookVo;
 import com.office.library.book.RentalBookVo;
 
 @Service
@@ -46,5 +47,11 @@ public class BookService {
 		System.out.println("[BookService] listupRentalBookHistory()");
 		
 		return bookDao.selectRentalBookHistory(u_m_no);
+	}
+	
+	public int requestHopeBookConfirm(HopeBookVo hopeBookVo) {
+		System.out.println("[BookService] listupRentalBookHistory()");
+		
+		return bookDao.insertHopeBook(hopeBookVo);
 	}
 }

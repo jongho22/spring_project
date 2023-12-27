@@ -48,6 +48,7 @@
 			<mapping path="/book/user/rentalBookConfirm"/>
 			<mapping path="/book/user/enterBookshelf"/>
 			<mapping path="/book/user/listupRentalBookHistory"/>
+			<mapping path="/book/user/requestHopeBookForm"/>
 			<mapping path="/user/member/**"/>
 			<exclude-mapping path="/user/member/createAccountForm"/>
 			<exclude-mapping path="/user/member/createAccountConfirm"/>
