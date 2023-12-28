@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
 import com.office.library.book.BookVo;
+import com.office.library.book.HopeBookVo;
 import com.office.library.book.RentalBookVo;
 
 @Component
@@ -289,4 +290,59 @@ public class BookDao {
 		return result;
 		
 	}
+	
+	public List<HopeBookVo> selectHopeBooks() {
+	System.out.println("[BookDao] selectHopeBooks()");
+	
+	String sql =  "SELECT * FROM tbl_hope_book hb "
+				+ "JOIN tbl_user_member um "
+				+ "ON hb.u_m_no = um.u_m_no "
+				+ "ORDER BY hb.hb_no DESC";
+	
+	List<HopeBookVo> hopeBookVos = new ArrayList<HopeBookVo>();
+	
+	try {
+		
+		hopeBookVos = jdbcTemplate.query(sql, new RowMapper<HopeBookVo>() {
+
+			@Override
+			public HopeBookVo mapRow(ResultSet rs, int rowNum) throws SQLException {
+				
+				HopeBookVo hopeBookVo = new HopeBookVo();
+				
+				hopeBookVo.setHb_no(rs.getInt("hb_no"));
+				hopeBookVo.setHb_name(rs.getString("hb_name"));
+				hopeBookVo.setHb_author(rs.getString("hb_author"));
+				hopeBookVo.setHb_publisher(rs.getString("hb_publisher"));
+				hopeBookVo.setHb_publish_year(rs.getString("hb_publish_year"));
+				hopeBookVo.setHb_reg_date(rs.getString("hb_reg_date"));
+				hopeBookVo.setHb_mod_date(rs.getString("hb_mod_date"));
+				hopeBookVo.setHb_result(rs.getInt("hb_result"));
+				hopeBookVo.setHb_result_last_date(rs.getString("hb_result_last_date"));
+				
+				hopeBookVo.setU_m_no(rs.getInt("u_m_no"));
+				hopeBookVo.setU_m_id(rs.getString("u_m_id"));
+				hopeBookVo.setU_m_pw(rs.getString("u_m_pw"));
+				hopeBookVo.setU_m_name(rs.getString("u_m_name"));
+				hopeBookVo.setU_m_gender(rs.getString("u_m_gender"));
+				hopeBookVo.setU_m_mail(rs.getString("u_m_mail"));
+				hopeBookVo.setU_m_phone(rs.getString("u_m_phone"));
+				hopeBookVo.setU_m_reg_date(rs.getString("u_m_reg_date"));
+				hopeBookVo.setU_m_reg_date(rs.getString("u_m_mod_date"));
+				
+				return hopeBookVo;
+				
+			}
+			
+		});
+		
+	} catch (Exception e) {
+		e.printStackTrace();
+		
+	}
+	
+	System.out.println(hopeBookVos);
+	return hopeBookVos;
+	
+}
 }

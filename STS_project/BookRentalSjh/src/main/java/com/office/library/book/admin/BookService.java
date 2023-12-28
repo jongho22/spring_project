@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.office.library.book.BookVo;
+import com.office.library.book.HopeBookVo;
 import com.office.library.book.RentalBookVo;
 
 @Service
@@ -77,5 +78,11 @@ public class BookService {
 		if (result > 0) result = bookDao.updateBook(b_no);
 		
 		return result;
+	}
+	
+	public List<HopeBookVo> getHopeBooks() {
+		System.out.println("[BookService] getHopeBooks()");
+		
+		return bookDao.selectHopeBooks();
 	}
 }

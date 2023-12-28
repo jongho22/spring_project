@@ -15,6 +15,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.office.library.admin.utill.UploadFileService;
 import com.office.library.book.BookVo;
+import com.office.library.book.HopeBookVo;
 import com.office.library.book.RentalBookVo;
 
 @Controller
@@ -158,6 +159,20 @@ public class BookController {
 		if (result <= 0)
 			nextPage = "admin/book/return_book_ng";
 		
+		return nextPage;
+	}
+	
+	// 희망 도서 목록
+	@GetMapping("/getHopeBooks")
+	public String getHopeBooks(Model model) {
+		System.out.println("[UserBookController] getHopeBooks()");
+			
+		String nextPage = "admin/book/hope_books";
+			
+		List<HopeBookVo> hopeBookVos = bookService.getHopeBooks();
+			
+		model.addAttribute("hopeBookVos",hopeBookVos);
+			
 		return nextPage;
 	}
 }
