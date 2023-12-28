@@ -165,7 +165,7 @@ public class BookController {
 	// 희망 도서 목록
 	@GetMapping("/getHopeBooks")
 	public String getHopeBooks(Model model) {
-		System.out.println("[UserBookController] getHopeBooks()");
+		System.out.println("[BookController] getHopeBooks()");
 			
 		String nextPage = "admin/book/hope_books";
 			
@@ -174,5 +174,58 @@ public class BookController {
 		model.addAttribute("hopeBookVos",hopeBookVos);
 			
 		return nextPage;
+	}
+	
+	// 희망 도서 등록(입고 처리)
+	@GetMapping("/registerHopeBookForm")
+	public String registerHopeBookForm(Model model, HopeBookVo hopeBookVo) {
+		System.out.println("[BookController] registerHopeBookForm()");
+	
+		String nextPage = "admin/book/register_hope_book_form";
+		
+		model.addAttribute("hopeBookVo", hopeBookVo);
+		
+		return nextPage;
+	}
+	
+	// 희망 도서등록(입고 처리) 확인
+	@PostMapping("/registerHopeBookConfirm")
+	public String registerHopeBookConfirm(BookVo bookVo,
+							@RequestParam("hb_no") int hb_no,
+							@RequestParam("file") MultipartFile file) {
+		System.out.println("[BookController] registerHopeBookConfirm()");
+		
+		System.out.println("hb_no : " + hb_no);
+		
+		String nextPage = "admin/book/register_book_ok";
+		
+		// 파일 저장 
+		String savedFileName = uploadFileService.upload(file);
+		
+		if (savedFileName != null) {
+			bookVo.setB_thumbnail(savedFileName);
+			int result = bookService.registerHopeBookConfirm(bookVo, hb_no);
+			
+			if (result <= 0) nextPage = "admin/book/register_book_ng";
+		} else {
+			nextPage = "admin/book/register_book_ng";
+		}
+		return nextPage;
+		
+	}
+	
+	// 전체도서목록
+	@GetMapping("/getAllBooks")
+	public String getAllBooks(Model model) {
+		System.out.println("[BookController] getAllBooks()");
+		
+		String nextPage = "admin/book/full_list_of_books";
+		
+		List<BookVo> bookVos = bookService.getAllBooks();
+		
+		model.addAttribute("bookVos", bookVos);
+		
+		return nextPage;
+		
 	}
 }
