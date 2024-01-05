@@ -19,6 +19,10 @@ public class MultipartResolverConfig {
 		System.out.println("[MutipartResolverConfig] multipartResolver()");
 		
 		CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+		multipartResolver.setMaxUploadSize(fileSize);
+		multipartResolver.setDefaultEncoding(fileEncoding);
+		
+		return multipartResolver;
 	}
 	
 }

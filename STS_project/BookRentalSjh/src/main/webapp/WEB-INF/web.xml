@@ -8,10 +8,10 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>
 			/WEB-INF/spring/root-context.xml
-			<!-- /WEB-INF/spring/jdbc-context.xml -->
-			/WEB-INF/spring/security-context.xml
-			/WEB-INF/spring/mail-context.xml
-			/WEB-INF/spring/file-context.xml
+			/WEB-INF/spring/jdbc-context.xml
+			<!-- /WEB-INF/spring/security-context.xml -->
+			<!-- /WEB-INF/spring/mail-context.xml -->
+			<!-- /WEB-INF/spring/file-context.xml -->
 			/WEB-INF/spring/properties-context.xml
 		</param-value>
 		
