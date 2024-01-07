@@ -6,10 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+
+import com.office.library.book.BookVo;
 
 @Component
 public class UserMemberDao {
@@ -53,34 +56,28 @@ public class UserMemberDao {
 	}
 	
 	public UserMemberVo selectUser(UserMemberVo userMemberVo) {
-		System.out.println("[UserMemberDao]  selectUser()");
+		System.out.println("[UserMemberDao check]  selectUser()");
 		
 		String sql = "SELECT * FROM tbl_user_member "
+				+ "WHERE u_m_pw = ?";
+		
+		String idCheckSql = "SELECT * FROM tbl_user_member "
 				+ "WHERE u_m_id = ?";
 		
 		List<UserMemberVo> userMemberVos = new ArrayList<UserMemberVo>();
 		
 		try {
-			userMemberVos = jdbcTemplate.query(sql, new RowMapper<UserMemberVo>() {
-					
-					@Override
-					public UserMemberVo mapRow(ResultSet rs, int rowNum) throws SQLException {
-					
-					UserMemberVo userMemberVo = new UserMemberVo();
-					
-					userMemberVo.setU_m_no(rs.getInt("u_m_no"));
-					userMemberVo.setU_m_id(rs.getString("u_m_id"));
-					userMemberVo.setU_m_pw(rs.getString("u_m_pw"));
-					userMemberVo.setU_m_name(rs.getString("u_m_name"));
-					userMemberVo.setU_m_gender(rs.getString("u_m_gender"));
-					userMemberVo.setU_m_mail(rs.getString("u_m_mail"));
-					userMemberVo.setU_m_phone(rs.getString("u_m_phone"));
-					userMemberVo.setU_m_reg_date(rs.getString("u_m_reg_date"));
-					userMemberVo.setU_m_mod_date(rs.getString("u_m_mod_date"));
-					
-					return userMemberVo;
-				}
-			}, userMemberVo.getU_m_id());
+			
+			RowMapper<UserMemberVo> rowMapper = BeanPropertyRowMapper.newInstance(UserMemberVo.class);
+	        userMemberVos = jdbcTemplate.query(idCheckSql, rowMapper, userMemberVo.getU_m_id());
+	       
+	        String password = userMemberVos.get(0).u_m_pw;
+	        
+	        
+	        if (!passwordEncoder.matches(userMemberVo.getU_m_pw(), password)) {
+	        	userMemberVos.clear();
+	        }
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
