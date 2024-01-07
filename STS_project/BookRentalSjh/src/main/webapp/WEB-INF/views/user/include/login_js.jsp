@@ -12,10 +12,6 @@
 			alert('INPUT USER ID.');
 			form.u_m_id.focus();
 			
-		} else if (form.u_m_pw.value == '') {
-			alert('INPUT USER PW.');
-			form.u_m_pw.focus();
-			
 		} else {
 			form.submit();
 			

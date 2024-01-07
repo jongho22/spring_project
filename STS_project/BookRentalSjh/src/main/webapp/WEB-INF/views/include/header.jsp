@@ -35,13 +35,13 @@
 		
 		<div class="menu">
 			<ul>
-				<li><a class="user" href="<c:url value='/' />">USER HOME</a></li>
-				<li><a class="admin" href="<c:url value='/admin' />">ADMIN HOME</a></li>
+				<li><a class="user" href="<c:url value='/' />">페이지1</a></li>
+				<li><a class="admin" href="<c:url value='/admin' />">페이지2</a></li>
 			</ul>
 		</div>
 		
 		<div class="title">
-			<h3>한국 도서관 - 도서 대여 서비스</h3>
+			<h3>ACIN - 테스트 웹사이트</h3>
 		</div>
 		
 	</div>

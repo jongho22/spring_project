@@ -46,7 +46,9 @@ public class UserMemberDao {
 		
 		try {
 			result = jdbcTemplate.update(sql,userMemberVo.getU_m_id(),
-					passwordEncoder.encode(userMemberVo.getU_m_pw()),
+//					passwordEncoder.encode(userMemberVo.getU_m_pw()),
+					userMemberVo.getU_m_pw(),
+					
 					userMemberVo.getU_m_name(), userMemberVo.getU_m_gender(),
 					userMemberVo.getU_m_mail(), userMemberVo.getU_m_phone());
 		} catch (Exception e) {
@@ -59,24 +61,22 @@ public class UserMemberDao {
 		System.out.println("[UserMemberDao check]  selectUser()");
 		
 		String sql = "SELECT * FROM tbl_user_member "
-				+ "WHERE u_m_pw = ?";
+				+ "WHERE u_m_id = '" + userMemberVo.getU_m_id() + "' "
+				+ "AND u_m_pw = '" + userMemberVo.getU_m_pw() + "'";
 		
-		String idCheckSql = "SELECT * FROM tbl_user_member "
-				+ "WHERE u_m_id = ?";
-		
+//		String sql2 = String.format("SELECT * FROM tbl_user_member WHERE u_m_id = '%s' AND u_m_pw = '%s'",
+//		        userMemberVo.getU_m_id(), userMemberVo.getU_m_pw());
+	
 		List<UserMemberVo> userMemberVos = new ArrayList<UserMemberVo>();
 		
 		try {
 			
 			RowMapper<UserMemberVo> rowMapper = BeanPropertyRowMapper.newInstance(UserMemberVo.class);
-	        userMemberVos = jdbcTemplate.query(idCheckSql, rowMapper, userMemberVo.getU_m_id());
-	       
-	        String password = userMemberVos.get(0).u_m_pw;
-	        
-	        
-	        if (!passwordEncoder.matches(userMemberVo.getU_m_pw(), password)) {
-	        	userMemberVos.clear();
-	        }
+			userMemberVos = jdbcTemplate.query(sql, rowMapper);
+			
+//			System.out.println(jdbcTemplate.queryForList(sql2));
+			
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 
-<jsp:include page="../../include/title.jsp" />
+<%-- <jsp:include page="../../include/title.jsp" /> --%>
 
 <link href="<c:url value='/resources/css/user/login_form.css' />" rel="stylesheet" type="text/css">
 
@@ -18,7 +18,7 @@
 
 	<jsp:include page="../../include/header.jsp" />
 	
-	<jsp:include page="../include/nav.jsp" />
+	<%-- <jsp:include page="../include/nav.jsp" />  --%>
 	
 	<section>
 		
@@ -26,7 +26,7 @@
 			
 			<div class="word">
 			
-				<h3>LOGIN FORM</h3>
+				<h3> SQL 인젝션 테스트</h3>
 				
 			</div>
 			
@@ -35,7 +35,7 @@
 				<form action="<c:url value='/user/member/loginConfirm' />" name="login_form" method="post">
 					
 					<input type="text"		name="u_m_id" 		placeholder="INPUT USER ID."> <br>
-					<input type="password"	name="u_m_pw" 		placeholder="INPUT USER PW."> <br>
+					<input type="text"	name="u_m_pw" 		placeholder="INPUT USER PW."> <br>
 					<input type="button"	value="login" onclick="loginForm();"> 
 					<input type="reset"		value="reset">
 					
